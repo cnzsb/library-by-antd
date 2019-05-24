@@ -1,0 +1,118 @@
+@import "./colors";
+
+@theme-prefix: customized;
+
+
+@ant-prefix: @theme-prefix;
+
+// -------- Colors -----------
+@primary-color: @blue-300;
+@info-color: @blue-300;
+@success-color: @dark-green;
+@processing-color: @blue-300;
+@error-color: @pink-red;
+@highlight-color: @pink-red;
+@warning-color: @orange;
+@normal-color: @grey-200;
+
+
+// Color used by default to control hover and active backgrounds and for alert info backgrounds.
+@primary-1: @blue-100;
+@primary-2: @blue-200;
+@primary-3: @blue-300;
+@primary-4: @blue-400;
+@primary-5: @blue-200;
+@primary-6: @blue-600;
+
+
+@font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei';
+@text-color: @grey-500;
+@text-color-secondary: @grey-400;
+@text-color-warning: @pink-red;
+@text-color-danger: @pink-red;
+@heading-color: @grey-600;
+
+
+// The background colors for active and hover states for things like
+// list items or table cells.
+@item-active-bg: fade(@blue-100, 20%);
+@item-hover-bg: fade(@blue-100, 20%);
+
+
+// Link
+@link-color: @primary-color;
+@link-hover-color: @primary-2;
+@link-active-color: @primary-4;
+
+
+// Border color
+@border-color-base: @grey-200; // base border outline a component
+@border-color-split: @grey-200; // split border inside a component
+
+@background-color-light: @grey-100; // background of header and selected item
+@background-color-base: @grey-100; // Default grey background color
+
+
+// Disabled states
+@disabled-color: @grey-300;
+
+
+// Buttons
+@btn-font-size-sm: 13px;
+@btn-group-border: @primary-5;
+
+
+// Radio buttons
+@radio-button-hover-color: @primary-2;
+@radio-button-active-color: @primary-4;
+
+
+// Input
+@input-placeholder-color: @grey-300;
+
+
+// Tooltip
+@tooltip-bg: @grey-600;
+
+
+// Modal
+@modal-body-padding: 0 24px;
+
+
+// Table
+@table-row-hover-bg: fade(@primary-1, 20%);
+
+
+// Rate
+@rate-star-color: @pink-red;
+
+
+// Tabs
+@tabs-card-active-color: @grey-600;
+@tabs-ink-bar-color: @grey-600;
+@tabs-highlight-color: @grey-600;
+@tabs-hover-color: @grey-600;
+@tabs-active-color: @grey-600;
+
+
+// Avatar
+@avatar-bg: @blue-100;
+
+
+// Breadcrumb
+@breadcrumb-link-color-hover: @grey-500;
+
+
+// Alert
+@alert-success-border-color: transparent;
+@alert-success-bg-color: fade(@success-color, 20%);
+@alert-success-icon-color: @success-color;
+@alert-info-border-color: transparent;
+@alert-info-bg-color: fade(@info-color, 20%);
+@alert-info-icon-color: @info-color;
+@alert-warning-border-color: transparent;
+@alert-warning-bg-color: fade(@warning-color, 20%);
+@alert-warning-icon-color: @warning-color;
+@alert-error-border-color: transparent;
+@alert-error-bg-color: fade(@error-color, 20%);
+@alert-error-icon-color: @error-color;
