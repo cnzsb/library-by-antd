@@ -3,11 +3,9 @@
 > A UI library based on Ant Design
 
 
-* Must Use `<ConfigProvider />` in your root Component
-
-
 ### notice
 
+* Must Use `<ConfigProvider />` in your root Component
 * Keep current file directories when editing files
 * Below components have have dependency styles
     - col
@@ -36,17 +34,21 @@
     - typography
     - page-header
     - mentions
+* use `babel-plugin-import` to implement dynamic import
+    - `style` can be only set to `css`
 
 
 ### customized components
 
 * below is our private components or customizing styles
+    - config-provider
+    - icon
     - modal
     - tree
     - tree-select
-    - config-provider
 
 
 ### TODO
 - [ ] add private classname prefix to all components
 - [ ] sync antd components automatically
+- [ ] dynamic import support `{style: true}` for less
