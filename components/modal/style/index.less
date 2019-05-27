@@ -1,1 +1,14 @@
 @import '~antd/lib/modal/style/index.less';
+@import '../../style/themes.less';
+
+@modal-prefix-cls: ~'@{theme-prefix}-modal';
+
+.@{modal-prefix-cls} {
+  &-header {
+    border-bottom: none;
+  }
+
+  &-footer {
+    border-top: none;
+  }
+}

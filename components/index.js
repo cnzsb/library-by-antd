@@ -20,6 +20,8 @@ export { default as Calendar } from './calendar';
 
 export { default as Card } from './card';
 
+export { default as Collapse } from './collapse';
+
 export { default as Carousel } from './carousel';
 
 export { default as Cascader } from './cascader';
@@ -28,19 +30,19 @@ export { default as Checkbox } from './checkbox';
 
 export { default as Col } from './col';
 
-export { default as Collapse } from './collapse';
-
 export { default as Comment } from './comment';
 
 export { default as ConfigProvider } from './config-provider';
 
 export { default as DatePicker } from './date-picker';
 
+export { default as Descriptions } from './descriptions';
+
 export { default as Divider } from './divider';
 
-export { default as Drawer } from './drawer';
-
 export { default as Dropdown } from './dropdown';
+
+export { default as Drawer } from './drawer';
 
 export { default as Empty } from './empty';
 
@@ -61,6 +63,8 @@ export { default as LocaleProvider } from './locale-provider';
 export { default as message } from './message';
 
 export { default as Menu } from './menu';
+
+export { default as Mentions } from './mentions';
 
 export { default as Modal } from './modal';
 

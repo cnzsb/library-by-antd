@@ -1,1 +1,14 @@
 @import '~antd/lib/tree/style/index.less';
+@import "../../style/themes.less";
+
+@tree-prefix-cls: ~'@{theme-prefix}-tree';
+
+.@{tree-prefix-cls} {
+  li {
+    .@{tree-prefix-cls}-node-content-wrapper {
+      &.@{tree-prefix-cls}-node-selected {
+        background-color: @primary-1;
+      }
+    }
+  }
+}
