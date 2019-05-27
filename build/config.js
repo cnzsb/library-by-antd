@@ -6,13 +6,15 @@ function resolvePath(...dir) {
 }
 
 module.exports = {
-  name: 'customized',
+  name: 'lba',
   components: resolvePath('./components'),
   pkgName: pkg.name,
   version: pkg.version,
 
-  // when modifying it, please modify 'theme-prefix' in 'components/style/themes.less' too
-  themePrefixCls: 'customized',
+  // when modifying it
+  // please modify 'theme-prefix' in 'components/style/themes.less'
+  // and  'THEME_PREFIX' in 'components/config-provider/index.js'
+  themePrefixCls: 'lba',
   modifyVars: {
     // https://github.com/ant-design/ant-design/issues/16464
     'hack': `true; @import '${resolvePath('components/style/themes.less')}'`,

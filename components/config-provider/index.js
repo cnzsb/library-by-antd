@@ -1,9 +1,10 @@
 import * as AntConfigProvider from 'antd/lib/config-provider';
-import config from '../../build/config';
+
+const THEME_PREFIX = 'lba';
 
 class ConfigProvider extends AntConfigProvider.default {
   getPrefixCls = (suffixCls, customizePrefixCls) => {
-    const { prefixCls = config.themePrefixCls } = this.props;
+    const { prefixCls = THEME_PREFIX } = this.props;
 
     if (customizePrefixCls) return customizePrefixCls;
 
