@@ -52,3 +52,4 @@
 - [ ] add private classname prefix to all components
 - [ ] sync antd components automatically
 - [ ] dynamic import support `{style: true}` for less
+- [ ] script for automatically release
