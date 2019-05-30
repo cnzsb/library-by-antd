@@ -5,9 +5,12 @@
 
 ### notice
 
-* Must Use `<ConfigProvider />` in your root Component
-* Keep current file directories when editing files
-* Below components have have dependency styles
+- Keep current file directories when editing files
+- Use `babel-plugin-import` to implement dynamic import
+    - `style` can be only set to `css`
+- Must Use `<ConfigProvider />` in your root Component
+- Can import `lib/style/colors.less` for our own color variables
+- Below components have have dependency styles
     - col
     - row
     - card
@@ -34,21 +37,24 @@
     - typography
     - page-header
     - mentions
-* use `babel-plugin-import` to implement dynamic import
-    - `style` can be only set to `css`
 
 
 ### customized components
 
-* below is our private components or customizing styles
-    - config-provider
-    - icon
-    - modal
-    - tree
-    - tree-select
+below is our private components or customizing styles
+
+- config-provider
+- icon
+    - our own icon will prefix with 'sl-icon-'
+- locale-provider
+    - `locale` can be passed with our own string, such as 'en', 'zh', 'it', etc.
+- modal
+- tree
+- tree-select
 
 
 ### TODO
+- [ ] add documents
 - [ ] add private classname prefix to all components
 - [ ] sync antd components automatically
 - [ ] dynamic import support `{style: true}` for less

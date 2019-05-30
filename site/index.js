@@ -1,13 +1,28 @@
 /* eslint-disable */
 import React from 'react';
 import reactDom from 'react-dom';
-// import { Button, Alert } from '../dist/library-by-antd';
-import { ConfigProvider, List, Anchor, Button, Alert, Popover, Modal } from 'library-by-antd';
+// import { Button, Alert } from '../dist/lba';
+import {
+  ConfigProvider,
+  LocaleProvider,
+  DatePicker,
+  Icon,
+  List,
+  Anchor,
+  Button,
+  Alert,
+  Popover,
+  Modal,
+  Select,
+} from 'lba';
 // import '../components/style/themes.less';
-// import '../dist/library-by-antd.css';
+// import '../dist/lba.css';
 // import '../lib/popconfirm/style';
 // import '../lib/message/style/index.less';
 // import './style.less';
+
+const { Option } = Select;
+const { RangePicker } = DatePicker;
 
 const data = [
   'Racing car sprays burning fuel into crowd.',
@@ -18,7 +33,10 @@ const data = [
 ];
 
 class App extends React.Component {
-  state = { visible: false };
+  state = {
+    locale: '',
+    visible: false,
+  };
 
   showModal = () => {
     this.setState({
@@ -41,40 +59,55 @@ class App extends React.Component {
   };
 
   render() {
+    const { locale } = this.state;
+
     return (
-      <ConfigProvider>
-        <div style={{ height: 3000 }}>
-          <h2>Test</h2>
+      <LocaleProvider locale={locale}>
+        <ConfigProvider>
+          <div style={{ height: 3000 }}>
+            <h2>Test</h2>
 
-          <List
-            bordered
-            dataSource={[] || data}
-            renderItem={item => <List.Item>{item}</List.Item>}
-          />
+            <Select style={{ width: 200 }} onChange={l => this.setState({ locale: l })}>
+              {['en', 'es', 'fr', 'nl', 'zh', 'zh-hans', 'zh-hant', 'pt', 'de', 'it'].map(l =>
+                <Option key={l}>{l}</Option>,
+              )}
+            </Select>
+            <br />
+            <RangePicker onChange={(m, s) => console.log(s)} />
+            <br />
+
+            <Icon type="sl-icon-view-report-outlined-sl" />
+            <Icon type="sliders" />
+
+            <List
+              bordered
+              dataSource={[] || data}
+              renderItem={item => <List.Item>{item}</List.Item>}
+            />
 
 
-          <Popover content={<div>sdtwetsdfasdfsdfsdf</div>} title="Title">
-            Hover me
-          </Popover>
+            <Popover content={<div>sdtwetsdfasdfsdfsdf</div>} title="Title">
+              Hover me
+            </Popover>
 
-          <Anchor>
-            <Button type="primary" onClick={this.showModal}>
-              Open Modal
-            </Button>
-          </Anchor>
+            <Anchor>
+              <Button type="primary" onClick={this.showModal}>
+                Open Modal
+              </Button>
+            </Anchor>
 
-          <Modal
-            title="Basic Modal"
-            visible={this.state.visible}
-            onOk={this.handleOk}
-            onCancel={this.handleCancel}
-          >
-            <p>Some contents...</p>
-            <p>Some contents...</p>
-            <p>Some contents...</p>
-          </Modal>
+            <Modal
+              title="Basic Modal"
+              visible={this.state.visible}
+              onOk={this.handleOk}
+              onCancel={this.handleCancel}
+            >
+              <p>Some contents...</p>
+              <p>Some contents...</p>
+              <p>Some contents...</p>
+            </Modal>
 
-          {/* <Popconfirm
+            {/* <Popconfirm
       title="Are you sure delete this task?"
       onConfirm={(e) => {
         console.log(e);
@@ -90,14 +123,15 @@ class App extends React.Component {
       <a href="#">Delete</a>
     </Popconfirm> */}
 
-          <Alert message="Success Text" type="success" />
-          <Alert message="Info Text" type="info" />
-          <Alert message="Warning Text" type="warning" />
-          <Alert message="Error Text" type="error" />
-          <Button type="primary">提交</Button>
-          <Button>重置</Button>
-        </div>
-      </ConfigProvider>
+            <Alert message="Success Text" type="success" />
+            <Alert message="Info Text" type="info" />
+            <Alert message="Warning Text" type="warning" />
+            <Alert message="Error Text" type="error" />
+            <Button type="primary">提交</Button>
+            <Button>重置</Button>
+          </div>
+        </ConfigProvider>
+      </LocaleProvider>
     );
   }
 }

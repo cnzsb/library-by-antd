@@ -18,7 +18,7 @@ module.exports = {
   },
   resolve: {
     alias: {
-      'library-by-antd': resolvePath(),
+      'lba': resolvePath(),
     },
   },
   module: {

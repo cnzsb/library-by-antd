@@ -54,6 +54,11 @@ module.exports = function (modules = 'auto') {
         '@babel/env',
         {
           modules,
+          useBuiltIns: 'usage',
+          corejs: {
+            version: 3,
+            proposals: true,
+          },
           targets: { browsers },
         },
       ],
