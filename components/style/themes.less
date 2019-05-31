@@ -1,4 +1,4 @@
-@import "./colors";
+@import "./mixins/index";
 
 @theme-prefix: lba;
 
@@ -25,7 +25,7 @@
 @primary-6: @blue-600;
 
 
-@font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei';
+@font-family: @preferred-font, @preferred-font-zh;
 @text-color: @grey-500;
 @text-color-secondary: @grey-400;
 @text-color-warning: @pink-red;

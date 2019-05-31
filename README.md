@@ -9,7 +9,7 @@
 - Use `babel-plugin-import` to implement dynamic import
     - `style` can be only set to `css`
 - Must Use `<ConfigProvider />` in your root Component
-- Can import `lib/style/colors.less` for our own color variables
+- Can import `lib/style/mixins/index.less` for our own common variables
 - Below components have have dependency styles
     - col
     - row
