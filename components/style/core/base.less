@@ -1,0 +1,17 @@
+@import "../themes";
+
+html {
+  box-sizing: border-box;
+
+  *,
+  *::after,
+  *::before {
+    box-sizing: border-box;
+  }
+
+  font-family: @preferred-font;
+
+  &[lang^=zh] {
+    font-family: @preferred-font-zh;
+  }
+}

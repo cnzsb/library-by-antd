@@ -10,11 +10,12 @@
     - `style` can be only set to `css`
 - Must Use `<ConfigProvider />` in your root Component
 - Can import `lib/style/mixins/index.less` for our own common variables
+- When customizing a component styles, please notice to add a prefix at first like `@tabs-prefix-cls: ~'@{theme-prefix}-tabs'`
 - Below components have have dependency styles
     - col
     - row
     - card
-    - form 
+    - form
     - list
     - menu
     - rate
@@ -49,6 +50,7 @@ below is our private components or customizing styles
 - locale-provider
     - `locale` can be passed with our own string, such as 'en', 'zh', 'it', etc.
 - modal
+- tabs
 - tree
 - tree-select
 

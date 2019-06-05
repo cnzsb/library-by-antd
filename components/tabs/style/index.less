@@ -1,1 +1,10 @@
 @import '~antd/lib/tabs/style/index.less';
+@import '../../style/themes.less';
+
+@tabs-prefix-cls: ~'@{theme-prefix}-tabs';
+
+.@{tabs-prefix-cls} {
+  &-bar {
+    border-bottom: none;
+  }
+}

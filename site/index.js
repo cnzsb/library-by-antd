@@ -14,6 +14,7 @@ import {
   Popover,
   Modal,
   Select,
+  Tabs,
 } from 'lba';
 // import '../components/style/themes.less';
 // import '../dist/lba.css';
@@ -23,6 +24,7 @@ import {
 
 const { Option } = Select;
 const { RangePicker } = DatePicker;
+const { TabPane } = Tabs
 
 const data = [
   'Racing car sprays burning fuel into crowd.',
@@ -66,6 +68,18 @@ class App extends React.Component {
         <ConfigProvider>
           <div style={{ height: 3000 }}>
             <h2>Test</h2>
+
+            <Tabs size="small" defaultActiveKey="1">
+              <TabPane tab="Tab 1" key="1">
+                Content of Tab Pane 1
+              </TabPane>
+              <TabPane tab="Tab 2" key="2">
+                Content of Tab Pane 2
+              </TabPane>
+              <TabPane tab="Tab 3" key="3">
+                Content of Tab Pane 3
+              </TabPane>
+            </Tabs>
 
             <Select style={{ width: 200 }} onChange={l => this.setState({ locale: l })}>
               {['en', 'es', 'fr', 'nl', 'zh', 'zh-hans', 'zh-hant', 'pt', 'de', 'it'].map(l =>
