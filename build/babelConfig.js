@@ -1,4 +1,3 @@
-const { browserslist: browsers } = require('../package');
 const replaceLib = require('./utils/replaceLib');
 
 module.exports = function (modules = 'auto') {
@@ -59,7 +58,6 @@ module.exports = function (modules = 'auto') {
             version: 3,
             proposals: true,
           },
-          targets: { browsers },
         },
       ],
       '@babel/react',
