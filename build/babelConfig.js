@@ -2,6 +2,7 @@ const replaceLib = require('./utils/replaceLib');
 
 module.exports = function (modules = 'auto') {
   const plugins = [
+    'babel-plugin-inline-import-data-uri',
     '@babel/plugin-proposal-function-bind',
     '@babel/plugin-proposal-export-default-from',
     '@babel/plugin-proposal-logical-assignment-operators',

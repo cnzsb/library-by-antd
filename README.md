@@ -45,6 +45,7 @@
 below is our private components or customizing styles
 
 - config-provider
+- empty
 - icon
     - our own icon will prefix with 'sl-icon-'
 - locale-provider

@@ -1,18 +1,18 @@
-import * as AntConfigProvider from 'antd/lib/config-provider';
+import React, { Component } from 'react';
+import AntConfigProvider from 'antd/lib/config-provider';
+import Empty from '../empty';
 
 const THEME_PREFIX = 'lba';
 
-class ConfigProvider extends AntConfigProvider.default {
-  getPrefixCls = (suffixCls, customizePrefixCls) => {
-    const { prefixCls = THEME_PREFIX } = this.props;
-
-    if (customizePrefixCls) return customizePrefixCls;
-
-    return suffixCls ? `${prefixCls}-${suffixCls}` : prefixCls;
-  };
-
+class ConfigProvider extends Component {
   render() {
-    return super.render();
+    return (
+      <AntConfigProvider
+        prefixCls={THEME_PREFIX}
+        renderEmpty={() => <Empty />}
+        {...this.props}
+      />
+    );
   }
 }
 
