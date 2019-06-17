@@ -12,7 +12,12 @@
 - Can import `lib/style/mixins/index.less` for our own common variables
 - When customizing a component styles, please notice to add a prefix at first like `@tabs-prefix-cls: ~'@{theme-prefix}-tabs'`
 - When customizing a component, please refer to `<Button />`
-- Below components have have dependency styles
+- Special components
+    - button
+        - when adding text wrapped within `<FormattedMessage />` (or some other components but not pure text node only)
+         and also using `icon`, please make sure text node should be wrapped within `span` if you want a automatic split
+          between `icon` and `text` 
+- Below components have dependency styles
     - col
     - row
     - card
