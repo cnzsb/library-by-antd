@@ -1,3 +1,4 @@
+@import "../themes";
 @preferred-font: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
 @preferred-font-zh: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft Yahei';
 
@@ -62,4 +63,20 @@
 .text-100() {
   font-size: @font-size-100;
   line-height: @line-height-100;
+}
+
+// link
+.text-link() {
+  cursor: pointer;
+  text-decoration: @link-decoration;
+  color: @link-color;
+
+  &:hover {
+    text-decoration: @link-hover-decoration;
+    color: @link-hover-color;
+  }
+
+  &:active {
+    color: @link-active-color;
+  }
 }
