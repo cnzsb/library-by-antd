@@ -11,6 +11,7 @@
 - Must Use `<ConfigProvider />` in your root Component
 - Can import `lib/style/mixins/index.less` for our own common variables
 - When customizing a component styles, please notice to add a prefix at first like `@tabs-prefix-cls: ~'@{theme-prefix}-tabs'`
+- When customizing a component, please refer to `<Button />`
 - Below components have have dependency styles
     - col
     - row
@@ -44,6 +45,7 @@
 
 below is our private components or customizing styles
 
+- button
 - config-provider
 - empty
 - icon
