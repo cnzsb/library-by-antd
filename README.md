@@ -50,6 +50,8 @@
 
 below is our private components or customizing styles
 
+#### customized
+
 - button
 - config-provider
 - empty
@@ -61,6 +63,10 @@ below is our private components or customizing styles
 - tabs
 - tree
 - tree-select
+
+#### private
+
+- player
 
 
 ### TODO

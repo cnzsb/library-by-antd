@@ -1,0 +1,25 @@
+@import '../../style/themes';
+
+@video-prefix-cls: ~'@{theme-prefix}-video';
+@player-prefix-cls: ~'@{theme-prefix}-player';
+
+.@{video-prefix-cls} {
+  outline: none;
+  width: 100%;
+  max-height: 100%;
+}
+
+.@{player-prefix-cls} {
+  font-size: 20px;
+  color: @grey-300;
+  cursor: pointer;
+
+  &:hover {
+    color: @grey-400;
+  }
+
+  &-modal {
+    padding: 0;
+    line-height: 0;
+  }
+}

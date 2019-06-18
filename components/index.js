@@ -123,3 +123,6 @@ export { default as Typography } from './typography';
 export { default as Mention } from './mention';
 
 export { default as Upload } from './upload';
+
+
+export { default as Player } from './player';
