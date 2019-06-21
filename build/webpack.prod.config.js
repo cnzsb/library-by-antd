@@ -1,6 +1,6 @@
 const merge = require('webpack-merge');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 const { resolvePath } = require('./utils/pathUtil');
 const config = require('./config');
@@ -13,11 +13,11 @@ module.exports = merge(baseWebpackConfig, {
   },
   optimization: {
     minimizer: [
-      new UglifyJSPlugin({
+      new TerserPlugin({
         cache: true,
         parallel: true,
         sourceMap: true,
-        uglifyOptions: {
+        terserOptions: {
           warnings: false,
         },
       }),

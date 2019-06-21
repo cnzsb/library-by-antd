@@ -15,6 +15,7 @@ babelConfig.plugins.push([
     libraryName: config.pkgName,
     libraryDirectory: 'components',
   },
+  config.pkgName,
 ]);
 
 module.exports = {
@@ -44,7 +45,7 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        exclude: /node_modules/,
+        exclude: [/node_modules/, resolvePath('./index')],
         options: babelConfig,
       },
       {

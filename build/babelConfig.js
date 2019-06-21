@@ -9,26 +9,26 @@ module.exports = function (modules = 'auto') {
     [
       '@babel/plugin-proposal-optional-chaining',
       {
-        'loose': false,
+        loose: false,
       },
     ],
     [
       '@babel/plugin-proposal-pipeline-operator',
       {
-        'proposal': 'minimal',
+        proposal: 'minimal',
       },
     ],
     [
       '@babel/plugin-proposal-nullish-coalescing-operator',
       {
-        'loose': false,
+        loose: false,
       },
     ],
     '@babel/plugin-proposal-do-expressions',
     [
       '@babel/plugin-proposal-decorators',
       {
-        'legacy': true,
+        legacy: true,
       },
     ],
     '@babel/plugin-proposal-function-sent',
@@ -40,7 +40,7 @@ module.exports = function (modules = 'auto') {
     [
       '@babel/plugin-proposal-class-properties',
       {
-        'loose': true,
+        loose: true,
       },
     ],
     '@babel/plugin-proposal-json-strings',
@@ -65,5 +65,4 @@ module.exports = function (modules = 'auto') {
     ],
     plugins,
   };
-
 };
