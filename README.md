@@ -62,7 +62,6 @@ below is our private components or customizing styles
     - our own icon will prefix with 'sl-icon-'
 - locale-provider
     - `locale` can be passed with our own string, such as 'en', 'zh', 'it', etc.
-- modal
 - tabs
 - tree
 - tree-select

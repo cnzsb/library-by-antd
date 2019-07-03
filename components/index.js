@@ -86,6 +86,8 @@ export { default as Radio } from './radio';
 
 export { default as Rate } from './rate';
 
+export { default as Result } from './result';
+
 export { default as Row } from './row';
 
 export { default as Select } from './select';
@@ -119,8 +121,6 @@ export { default as Timeline } from './timeline';
 export { default as Tooltip } from './tooltip';
 
 export { default as Typography } from './typography';
-
-export { default as Mention } from './mention';
 
 export { default as Upload } from './upload';
 
