@@ -16,7 +16,10 @@
     - button
         - when adding text wrapped within `<FormattedMessage />` (or some other components but not pure text node only)
          and also using `icon`, please make sure text node should be wrapped within `span` if you want a automatic split
-          between `icon` and `text` 
+          between `icon` and `text`
+    - modal
+        - modal.xxx can not be customized, so please don't use them before we make a customized change, reference to:
+         https://github.com/ant-design/ant-design/issues/17001#issuecomment-499907330
 - Below components have dependency styles
     - col
     - row
