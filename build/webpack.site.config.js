@@ -79,7 +79,7 @@ module.exports = {
             [
               'babel-plugin-import',
               {
-                'libraryName': 'library-by-antd',
+                'libraryName': 'lba',
                 'style': 'css',
               },
             ],

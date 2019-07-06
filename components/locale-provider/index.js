@@ -41,7 +41,7 @@ class LocaleProvider extends PureComponent {
           /* webpackInclude: /\.js$/ */
           /* webpackExclude: /(index|LocaleReceiver)\.js$|style/ */
           /* webpackChunkName: "locales/[request]" */
-          `antd/lib/locale-provider/${LOCALE[locale] || defaultLocale}` // eslint-disable-line comma-dangle
+          `antd/lib/locale-provider/${LOCALE[locale] || defaultLocale}.js` // eslint-disable-line comma-dangle
         );
         localeConfig = data;
       } catch (e) {
