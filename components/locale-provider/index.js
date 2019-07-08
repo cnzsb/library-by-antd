@@ -1,11 +1,11 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import AntLocaleProvider from 'antd/lib/locale-provider';
 import LOCALE from './locale';
 
 const { en: defaultLocale } = LOCALE;
 
-class LocaleProvider extends PureComponent {
+class LocaleProvider extends Component {
   static propTypes = {
     locale: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   };
