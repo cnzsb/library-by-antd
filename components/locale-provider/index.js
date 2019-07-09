@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import AntLocaleProvider from 'antd/lib/locale-provider';
 import LOCALE from './locale';
+import LocaleReceiver from './LocaleReceiver';
+import { withLocale } from './withLocale';
 
 const { en: defaultLocale } = LOCALE;
 
@@ -61,3 +63,5 @@ class LocaleProvider extends Component {
 }
 
 export default LocaleProvider;
+LocaleProvider.LocaleReceiver = LocaleReceiver;
+LocaleProvider.withLocale = withLocale;
