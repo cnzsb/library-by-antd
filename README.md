@@ -19,7 +19,8 @@
           between `icon` and `text`
     - locale-provider
         - if using react-redux `connect`, make sure setting its option `pure` to `false` to let redux can feel context
-         changes, reference to: https://github.com/reduxjs/react-redux/blob/master/docs/troubleshooting.md
+         changes, or use `LocaleReceiver` to wrap your root element, or just use our private component `withLocale`
+          (detail api is provided below), reference to: https://github.com/reduxjs/react-redux/blob/master/docs/troubleshooting.md
     - modal
         - modal.xxx can not be customized, so please don't use them before we make a customized change, reference to:
          https://github.com/ant-design/ant-design/issues/17001#issuecomment-499907330
