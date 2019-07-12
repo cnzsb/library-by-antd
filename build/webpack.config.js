@@ -11,7 +11,7 @@ const postcssConfig = require('./postcssConfig');
 babelConfig.plugins.push([
   'babel-plugin-import',
   {
-    style: true,
+    style: 'css',
     libraryName: config.pkgName,
     libraryDirectory: 'components',
   },
@@ -41,6 +41,7 @@ module.exports = {
     },
   },
   module: {
+    noParse: [/moment.js/],
     rules: [
       {
         test: /\.js$/,

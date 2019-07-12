@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import AntLocaleProvider from 'antd/lib/locale-provider';
+import moment from 'moment';
 import LOCALE from './locale';
 import LocaleReceiver from './LocaleReceiver';
 import { withLocale } from './withLocale';
 
-const { en: defaultLocale } = LOCALE;
+const defaultLocale = 'en';
 
 class LocaleProvider extends Component {
   static propTypes = {
@@ -13,7 +14,7 @@ class LocaleProvider extends Component {
   };
 
   static defaultProps = {
-    locale: defaultLocale, // default locale
+    locale: LOCALE[defaultLocale][0], // default locale
   };
 
   state = {
@@ -42,8 +43,8 @@ class LocaleProvider extends Component {
         const { default: data } = await import(
           /* webpackInclude: /\.js$/ */
           /* webpackExclude: /(index|LocaleReceiver)\.js$|style/ */
-          /* webpackChunkName: "locales/[request]" */
-          `antd/lib/locale-provider/${LOCALE[locale] || defaultLocale}.js` // eslint-disable-line comma-dangle
+          /* webpackChunkName: "locales/ui/[request]" */
+          `antd/lib/locale-provider/${LOCALE[locale]?.[0] || 'en_US'}.js` // eslint-disable-line comma-dangle
         );
         localeConfig = data;
       } catch (e) {
@@ -52,7 +53,24 @@ class LocaleProvider extends Component {
         return;
       }
     }
-    if (localeConfig) this.setState({ localeConfig });
+
+    if (localeConfig) {
+      const momentLocale = LOCALE[locale]?.[1] || 'en';
+      if (momentLocale !== 'en') {
+        try {
+          await import(
+            /* webpackChunkName: "locales/moment/[request]" */
+            `moment/locale/${momentLocale}.js` // eslint-disable-line comma-dangle
+          );
+        } catch (e) {
+          // eslint-disable-next-line no-console
+          console.warn(`Locale "${locale}" for moment.js has not been supported yet, please check all supported locales`);
+        }
+      }
+      moment.locale(locale);
+
+      this.setState({ localeConfig });
+    }
   };
 
   render() {

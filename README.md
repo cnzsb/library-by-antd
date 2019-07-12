@@ -8,6 +8,7 @@
 - Keep current file directories when editing files
 - Use `babel-plugin-import` to implement dynamic import
     - `style` can be only set to `css`
+- Remember to add a `less-loader` and set `javascriptEnabled: true` to `antd`
 - Must Use `<ConfigProvider />` in your root Component
 - Can import `lib/style/mixins/index.less` for our own common variables
 - When customizing a component styles, please notice to add a prefix at first like `@tabs-prefix-cls: ~'@{theme-prefix}-tabs'`
