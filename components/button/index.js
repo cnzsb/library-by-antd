@@ -39,7 +39,7 @@ class Button extends Component {
         {...restProps}
       >
         {iconNode}
-        {children}
+        {(typeof children === 'string') ? <span>{children}</span> : children}
       </AntButton>
     );
   };

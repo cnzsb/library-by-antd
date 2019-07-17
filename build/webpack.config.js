@@ -1,5 +1,4 @@
 const WebpackBar = require('webpackbar');
-const FilterWarningsPlugin = require('webpack-filter-warnings-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const { resolvePath } = require('./utils/pathUtil');
@@ -124,10 +123,9 @@ module.exports = {
       name: `🚚  Build ${config.name}`,
       color: '#1F8DFB',
     }),
-    new FilterWarningsPlugin({
-      // suppress conflicting order warnings from mini-css-extract-plugin.
-      // https://github.com/webpack-contrib/mini-css-extract-plugin/issues/250
-      exclude: /mini-css-extract-plugin[^]*Conflicting order between:/,
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+      ignoreOrder: true,
     }),
     new MiniCssExtractPlugin({
       filename: '[name].css',
