@@ -155,9 +155,9 @@
 @btn-default-bg: #FFF;
 @btn-default-border: @border-color-base;
 
-@btn-danger-color: @error-color;
-@btn-danger-bg: @background-color-base;
-@btn-danger-border: @border-color-base;
+@btn-danger-color: #FFF;
+// @btn-danger-bg: color(~`colorPalette('@{error-color}', 5) `);
+// @btn-danger-border: color(~`colorPalette('@{error-color}', 5) `);
 
 @btn-disable-color: @disabled-color;
 @btn-disable-bg: @disabled-bg;
@@ -365,6 +365,7 @@
 @progress-default-color: @processing-color;
 @progress-remaining-color: @background-color-base;
 @progress-text-color: @text-color;
+@progress-radius: 100px;
 
 // Menu
 // ---
@@ -483,6 +484,8 @@
 @tabs-highlight-color: @grey-600;
 @tabs-hover-color: @grey-600;
 @tabs-active-color: @grey-600;
+@tabs-card-gutter: 2px;
+@tabs-card-tab-active-border-top: 2px solid transparent;
 
 // BackTop
 // ---
@@ -542,11 +545,14 @@
 @slider-rail-background-color-hover: #E1E1E1;
 @slider-track-background-color: @primary-3;
 @slider-track-background-color-hover: @primary-4;
+@slider-handle-border-width: 2px;
+@slider-handle-background-color: @component-background;
 @slider-handle-color: @primary-3;
 @slider-handle-color-hover: @primary-4;
 @slider-handle-color-focus: tint(@primary-color, 20%);
 @slider-handle-color-focus-shadow: fade(@primary-color, 20%);
 @slider-handle-color-tooltip-open: @primary-color;
+@slider-handle-shadow: 0;
 @slider-dot-border-color: @border-color-split;
 @slider-dot-border-color-active: tint(@primary-color, 50%);
 @slider-disabled-color: @disabled-color;
@@ -621,3 +627,11 @@
 // ---
 @drawer-header-padding: 16px 24px;
 @drawer-body-padding: 24px;
+
+// Timeline
+// ---
+@timeline-width: 2px;
+@timeline-color: @border-color-split;
+@timeline-dot-border-width: 2px;
+@timeline-dot-color: @primary-color;
+@timeline-dot-bg: @component-background;

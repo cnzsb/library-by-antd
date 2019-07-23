@@ -17,6 +17,15 @@ babelConfig.plugins.push([
   config.pkgName,
 ]);
 
+const svgOptions = {
+  limit: 10000,
+  mimetype: 'image/svg+xml',
+};
+
+const imageOptions = {
+  limit: 10000,
+};
+
 module.exports = {
   devtool: 'source-map',
   output: {
@@ -101,17 +110,12 @@ module.exports = {
       {
         test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
         loader: 'url-loader',
-        options: {
-          limit: 10000,
-          mimetype: 'image/svg+xml',
-        },
+        options: svgOptions,
       },
       {
         test: /\.(png|jpg|jpeg|gif)(\?v=\d+\.\d+\.\d+)?$/i,
         loader: 'url-loader',
-        options: {
-          limit: 10000,
-        },
+        options: imageOptions,
       },
     ],
   },
@@ -127,8 +131,8 @@ module.exports = {
       filename: '[name].css',
       ignoreOrder: true,
     }),
-    new MiniCssExtractPlugin({
-      filename: '[name].css',
-    }),
   ],
 };
+
+module.exports.svgOptions = svgOptions;
+module.exports.imageOptions = imageOptions;
