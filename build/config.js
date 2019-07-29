@@ -19,4 +19,12 @@ module.exports = {
     // https://github.com/ant-design/ant-design/issues/16464
     'hack': `true; @import '${resolvePath('components/style/themes.less')}'`,
   },
+
+  svgOptions: {
+    limit: 10000,
+    mimetype: 'image/svg+xml',
+  },
+  imageOptions: {
+    limit: 10000,
+  }
 };

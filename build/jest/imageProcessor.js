@@ -1,5 +1,5 @@
 const urlLoader = require('url-loader');
-const { svgOptions, imageOptions } = require('../webpack.config');
+const { svgOptions, imageOptions } = require('../config');
 
 module.exports = {
   process(src, filename) {

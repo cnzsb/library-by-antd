@@ -47,7 +47,7 @@ function compile(modules) {
     .src(['../components/**/*.@(png|svg)'])
     .pipe(gulp.dest(dest));
 
-  const js = gulp.src('../components/**/*.@(js|jsx)')
+  const js = gulp.src(['../components/**/*.@(js|jsx)', '!../components/**/__tests__/**', '!../components/**/__mocks__/**'])
     .pipe(babel(getBabelConfig(modules)))
     .pipe(
       through2.obj(function z(file, encoding, next) {
