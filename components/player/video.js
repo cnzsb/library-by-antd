@@ -80,6 +80,7 @@ export default class Video extends Component {
     const prefixCls = getPrefixCls('video', customizePrefixCls);
 
     return (
+      // eslint-disable-next-line jsx-a11y/media-has-caption
       <video
         ref={this.getVideoRef}
         className={classNames(prefixCls, className)}

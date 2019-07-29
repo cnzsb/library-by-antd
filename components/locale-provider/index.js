@@ -4,7 +4,7 @@ import AntLocaleProvider from 'antd/lib/locale-provider';
 import moment from 'moment';
 import LOCALE from './locale';
 import LocaleReceiver from './LocaleReceiver';
-import { withLocale } from './withLocale';
+import withLocale from './withLocale';
 
 const defaultLocale = 'en';
 
@@ -14,7 +14,7 @@ class LocaleProvider extends Component {
   };
 
   static defaultProps = {
-    locale: LOCALE[defaultLocale][0], // default locale
+    locale: defaultLocale, // default locale
   };
 
   state = {
@@ -31,7 +31,7 @@ class LocaleProvider extends Component {
     if (locale !== prevLocale) this.importLocale(locale);
   }
 
-  importLocale = async (locale = defaultLocale) => {
+  importLocale = async (locale) => {
     let localeConfig = null;
 
     if (typeof locale === 'object') {
@@ -44,12 +44,12 @@ class LocaleProvider extends Component {
           /* webpackInclude: /\.js$/ */
           /* webpackExclude: /(index|LocaleReceiver)\.js$|style/ */
           /* webpackChunkName: "locales/ui/[request]" */
-          `antd/lib/locale-provider/${LOCALE[locale]?.[0] || 'en_US'}.js` // eslint-disable-line comma-dangle
-        );
+          `antd/lib/locale-provider/${LOCALE[locale]?.[0]}.js` // eslint-disable-line comma-dangle
+          );
         localeConfig = data;
       } catch (e) {
         // eslint-disable-next-line no-console
-        console.warn(`Locale for "${locale}" has not been supported yet, please check all supported locales`);
+        console.warn(`Locale for "${locale}" has not been supported yet, please confirm all supported locales`);
         return;
       }
     }
@@ -61,13 +61,13 @@ class LocaleProvider extends Component {
           await import(
             /* webpackChunkName: "locales/moment/[request]" */
             `moment/locale/${momentLocale}.js` // eslint-disable-line comma-dangle
-          );
+            );
         } catch (e) {
-          // eslint-disable-next-line no-console
-          console.warn(`Locale "${locale}" for moment.js has not been supported yet, please check all supported locales`);
+          // should confirm LOCALE file to match moment's locales at all time
+          // if catching errors, moment.locale will be called with 'en'
         }
       }
-      moment.locale(locale);
+      moment.locale(momentLocale);
 
       this.setState({ localeConfig });
     }

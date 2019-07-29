@@ -8,7 +8,10 @@ const iconfontPrefix = 'sl-';
 function customizeIconFont () {
   if (!customCache.has(iconfontPrefix)) {
     customCache.add(iconfontPrefix);
-    import(/* webpackChunkName: "lba_iconfont" */'./iconfont.js');
+    import(/* webpackChunkName: "milhouse_iconfont" */'./iconfont.js')
+      .catch(() => {
+        // it won't fail forever, and current code block is just for test
+      });
   }
 }
 
