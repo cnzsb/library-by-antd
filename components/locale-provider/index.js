@@ -37,7 +37,7 @@ class LocaleProvider extends Component {
     if (typeof locale === 'object') {
       // original antd config
       localeConfig = locale;
-    } else {
+    } else if (locale) {
       // customized config
       try {
         const { default: data } = await import(
@@ -45,13 +45,16 @@ class LocaleProvider extends Component {
           /* webpackExclude: /(index|LocaleReceiver)\.js$|style/ */
           /* webpackChunkName: "locales/ui/[request]" */
           `antd/lib/locale-provider/${LOCALE[locale]?.[0]}.js` // eslint-disable-line comma-dangle
-          );
+        );
         localeConfig = data;
       } catch (e) {
         // eslint-disable-next-line no-console
         console.warn(`Locale for "${locale}" has not been supported yet, please confirm all supported locales`);
         return;
       }
+    } else {
+      // if locale is an empty string, should do nothing
+      return;
     }
 
     if (localeConfig) {
@@ -61,7 +64,7 @@ class LocaleProvider extends Component {
           await import(
             /* webpackChunkName: "locales/moment/[request]" */
             `moment/locale/${momentLocale}.js` // eslint-disable-line comma-dangle
-            );
+          );
         } catch (e) {
           // should confirm LOCALE file to match moment's locales at all time
           // if catching errors, moment.locale will be called with 'en'

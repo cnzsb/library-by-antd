@@ -59,11 +59,16 @@ describe('LocaleProvider', () => {
     expect(wrapper.state('localeConfig')).toMatchObject(locale);
   });
 
-  it('should keep previous locale if not finding a useful locale config', async () => {
+  it('should keep previous locale if not finding a useful locale config or passing an empty locale string', async () => {
     localeConfig = wrapper.state('localeConfig');
 
     const locale = null;
     wrapper.setProps({ locale });
+    await tick();
+    wrapper.update();
+    expect(wrapper.state('localeConfig')).toMatchObject(localeConfig);
+
+    wrapper.setProps({ locale: '' });
     await tick();
     wrapper.update();
     expect(wrapper.state('localeConfig')).toMatchObject(localeConfig);
