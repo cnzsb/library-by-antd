@@ -20,11 +20,19 @@
     "sourceType": "module"
   },
   "rules": {
+    "max-len": ["error", { "code": 200 }],
     "object-curly-newline": "off",
     "prefer-destructuring": "off",
     "import/prefer-default-export": "off",
     "react/jsx-filename-extension": "off",
     "react/require-default-props": "off",
     "react/prefer-stateless-function": "off"
+  },
+  "settings": {
+    "import/resolver": {
+      "webpack": {
+        "config": "./build/webpack.config.js"
+      }
+    }
   }
 }

@@ -132,6 +132,12 @@ module.exports = {
       ignoreOrder: true,
     }),
   ],
+
+  resolve: {
+    alias: {
+      test: resolvePath('./test'),
+    },
+  },
 };
 
 module.exports.svgOptions = svgOptions;
