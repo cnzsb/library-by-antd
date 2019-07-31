@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const WebpackBar = require('webpackbar');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
@@ -40,7 +41,6 @@ module.exports = {
     },
   },
   module: {
-    noParse: [/moment.js/],
     rules: [
       {
         test: /\.js$/,
@@ -114,6 +114,7 @@ module.exports = {
     hints: false,
   },
   plugins: [
+    new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
     new WebpackBar({
       name: `🚚  Build ${config.name}`,
       color: '#1F8DFB',

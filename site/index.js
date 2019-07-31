@@ -16,8 +16,9 @@ import {
   Select,
   Tabs,
 } from 'lba';
+// } from 'lba/dist/lba';
 // import '../components/style/themes.less';
-// import '../dist/lba.css';
+// import 'lba/dist/lba.css';
 // import '../lib/popconfirm/style';
 // import '../lib/message/style/index.less';
 // import './style.less';
@@ -90,7 +91,7 @@ class App extends React.Component {
             <RangePicker onChange={(m, s) => console.log(s)} />
             <br />
 
-            <Icon type="sl-icon-view-report-outlined-sl" />
+            <Icon type="sl-icon-outlined-view-report" />
             <Icon type="sliders" />
 
             <List

@@ -1,5 +1,5 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { resolvePath } = require('./utils/pathUtil');
 
@@ -23,7 +23,6 @@ module.exports = {
     },
   },
   module: {
-    noParse: [/moment.js/],
     rules: [
       {
         test: /\.js$/,
@@ -149,6 +148,7 @@ module.exports = {
     },
   },
   plugins: [
+    new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
     new HtmlWebpackPlugin({
       template: resolvePath('site/template.html'),
     }),
