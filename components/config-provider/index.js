@@ -2,7 +2,7 @@ import React from 'react';
 import AntConfigProvider, { ConfigConsumer } from 'antd/lib/config-provider';
 import Empty from '../empty';
 
-const THEME_PREFIX = 'lba';
+export const THEME_PREFIX = 'lba';
 
 function ConfigProvider(props) {
   return (

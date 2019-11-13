@@ -37,7 +37,8 @@
     "test": "jest --config build/jest.config.js",
     "test:coverage": "npm test -- --coverage",
     "test:watch": "npm test -- --watch",
-    "test:watchCoverage": "npm test -- --watch --coverage"
+    "test:watchCoverage": "npm test -- --watch --coverage",
+    "test:summary": "npm test -- --coverage --verbose=false --coverageReporters=text-summary"
   },
   "bugs": {
     "url": "https://github.com/cnzsb/library-by-antd.git"

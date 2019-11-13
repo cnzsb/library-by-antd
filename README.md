@@ -69,6 +69,10 @@ below is our private components or customizing styles
     - `locale` can be passed with our own string, such as 'en', 'zh', 'it', etc.
     - `withLocale` is our private custom provider for getting `locale` and `uiLocale` context, you may need it when using
      react-redux `connect` and don't forget to put it before `connect`
+- message
+    - add default prefixCls
+- notification
+    - add default prefixCls
 - tabs
 - tree
 - tree-select
